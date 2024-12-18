@@ -1,1 +1,1 @@
-This is my portfolio website. Access it on https://ainamanidm.github.io/portfolio/
+This is my portfolio Website. Access it on https://ainamanidm.github.io/portfolio/
