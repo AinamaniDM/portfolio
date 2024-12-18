@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ainamani Dickson</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/e5ff8bc16b.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="contact">
+        <div class="container">
+            <nav>
+                <img src="images/logo.png" class="logo">
+                <ul id="sidemenu">
+                    <li><a href ="index.html">About</a></li>
+                    <li><a href ="services.html">Services</a></li>
+                    <li><a href ="portfolio.html">Portfolio</a></li>
+                    <li><a href ="contact.html">Contact</a></li>
+                    <i class ="fas fa-times" onclick="closemenu()"></i>
+                </ul>  
+                <i class ="fas fa-bars" onclick="openmenu()"></i>  
+            </nav>
+        </div>
+    </div>
+
+    <div id="contact">
+        <div class="container">
+           <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Talk to Me</h1>
+                <p><i class="fa-solid fa-envelope"></i>ainamanidickson1@gmail.com</p>
+                <p><i class="fa-solid fa-phone"></i>+256778216763</p>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/ainamani-dickson"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://x.com/AinamaniDM"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://www.youtube.com/channel/UC-dkMwY7vrW8f1eiOXN9X-Q"><i class="fa-brands fa-square-youtube"></i></a>
+                    
+                </div>
+                <a href="images/dickson-cv.pdf"download class="button btn">Download CV</a>
+            </div>
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required> 
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="10" placeholder="Your message"></textarea>
+                    <button type="submit" class ="button btn">Submit</button>
+                </form>
+                <span id="message"></span>
+            </div>
+           </div> 
+        </div>
+        <div class="copyright">
+            <p>copyright © Ainamani Dickson 2024</p>
+        </div>
+    </div>
+    <script>
+        var sidemenu= document.getElementById("sidemenu");
+
+        function openmenu(){
+            sidemenu.style.right="0";
+        }
+        function closemenu(){
+            sidemenu.style.right="-200px";
+        }
+    </script>
+
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwberBxXDv01USW65Ixdc8HnoKjfkBv9RILrqO2SUrSf2n40ZINvLoVEUwnkwHwWG8aUA/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const message=document.getElementById("message")
+    
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                message.innerHTML ="Message sent successfully"
+                setTimeout(function(){
+                    message.innerHTML=""},600)
+                    form.reset()
+            })
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+     
+    
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ainamani Dickson</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/e5ff8bc16b.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="contact">
+        <div class="container">
+            <nav>
+                <img src="images/logo.png" class="logo">
+                <ul id="sidemenu">
+                    <li><a href ="index.html">About</a></li>
+                    <li><a href ="services.html">Services</a></li>
+                    <li><a href ="portfolio.html">Portfolio</a></li>
+                    <li><a href ="contact.html">Contact</a></li>
+                    <i class ="fas fa-times" onclick="closemenu()"></i>
+                 </ul>  
+                 <i class ="fas fa-bars" onclick="openmenu()"></i> 
+            </nav>
+        </div>
+    </div>
+
+    
+    <div id="about">
+        <div class="container">
+           <div class="row">
+                <div class="about-col-1">
+                    <img src="images/ADM-bg.png">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About me</h1>
+                    <p>Ainamani Dickson is a detail-driven and innovative software 
+                        engineer with a passion for leveraging technology to solve 
+                        real-world problems. With a strong foundation in Python 
+                        and Java, Dickson excels in developing efficient and scalable 
+                        solutions. He is a collaborative team player with excellent 
+                        communication skills, always eager to learn and adapt to new 
+                        technologies and challenges. Dickson's goal is to harness the power of 
+                        technology to make a meaningful impact in his community and beyond</p>
+                    
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>Skill 1</span><br>Skill 1 decription</li>
+                            <li><span>Skill 2</span><br>Skill 2 decription</li>
+                            <li><span>Skill 3</span><br>Skill 3 decription</li>
+                        </ul>
+                    </div>
+
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>2024</span><br>Recent work place </li>
+                            <li><span>2023</span><br>Second work place</li>
+                            <li><span>2023</span><br>First work place </li>
+                        </ul>
+                    </div>
+
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>period</span><br>Recent qualification and institution</li>
+                            <li><span>period</span><br>Other qualification and institution</li>
+                            <li><span>period</span><br>Second qualification and institution</li>
+                            <li><span>period</span><br>First qualification and institution</li>   
+                        </ul>  
+                    </div>  
+                </div>
+           </div> 
+        </div>
+    </div>
+
+    <script>
+        var sidemenu= document.getElementById("sidemenu");
+
+        function openmenu(){
+            sidemenu.style.right="0";
+        }
+        function closemenu(){
+            sidemenu.style.right="-200px";
+        }
+    </script>
+
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
+
+    
+</body>
+</html>
