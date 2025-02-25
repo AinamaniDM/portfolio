@@ -281,6 +281,8 @@ margin-bottom:30px;
 .button.btn{
     display: inline-block;
     background: #ff004f;
+    width:5px;
+    height:4px;
 
 }
 .contact-right form{
